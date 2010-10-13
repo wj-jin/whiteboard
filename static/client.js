@@ -62,12 +62,11 @@
 		var drawing = false;
 
 		canvas.onmousedown = function(e) {
-			Socket.send('Canvas.lock()');
-
 			x = e.clientX;
 			y = e.clientY;
 			drawing = true;
 
+			Socket.send('Canvas.lock()');
 			ctx.beginPath();
 			setPointer(x, y);
 			Socket.send('Canvas.setPointer('+x+','+y+')');
@@ -76,8 +75,10 @@
 		canvas.onmouseup = function(e) {
 			free();
 			ctx.closePath();
+			if(drawing) {
+				Socket.send('Canvas.free()');
+			}
 			drawing = false;
-			Socket.send('Canvas.free()');
 		}
 
 		canvas.onmousemove = function(e) {
@@ -114,25 +115,25 @@
 		this.draw = draw;
 		
 		function lock() {
-			ctx.closePath();
+			ctx.beginPath();
 			this.locked = true;
 		}
 		this.lock = function() {
-			if(!this.locked) {
+			if(!drawing) {
+				$('#canvas').parent().css('border-color', 'red');
 				lock();
 			}
 		};
 
 		function free() {
-			ctx.beginPath();
+			ctx.closePath();
 			this.locked = false;
 			x = null;
 			y = null;
 		}
 		this.free = function() {
-			if(!this.locked) {
-				free();
-			}
+			$('#canvas').parent().css('border-color', 'green');
+			free();
 		};
 		
 		function wipe() {
