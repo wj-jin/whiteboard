@@ -114,6 +114,7 @@
 		this.draw = draw;
 		
 		function lock() {
+			ctx.closePath();
 			this.locked = true;
 		}
 		this.lock = function() {
@@ -123,6 +124,7 @@
 		};
 
 		function free() {
+			ctx.beginPath();
 			this.locked = false;
 			x = null;
 			y = null;
