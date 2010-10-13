@@ -1,1 +1,13 @@
 A small collaborative drawing app.
+Just experimenting.
+
+Try is by going into the directory, and type:
+
+node app.js
+
+There will be a web server on port 9000 and a websocket thingy on 9001.
+
+Want to add redis support to serialize a canvas.
+Also want postit notes to be pushed on top.
+
+Pinched the basic drawing bit from http://www.damonkohler.com/2008/12/javascript-painting-with-canvas.html

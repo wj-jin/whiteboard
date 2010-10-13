@@ -53,16 +53,10 @@
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
 		
-		var idata = ctx.getImageData(0, 0, canvas.width, canvas.height);
-		
 		ctx.fillStyle = "black";
 
 		var x;
 		var y;
-		var min_x;
-		var min_y;
-		var max_x;
-		var max_y;
 		
 		this.locked = false;
 		var drawing = false;
