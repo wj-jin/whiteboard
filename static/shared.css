@@ -1,0 +1,10 @@
+body {
+   
+}
+
+.board {
+	border: 1px solid black;
+	width: 780px; 
+	height: 400px;
+	overflow: hidden;
+}
