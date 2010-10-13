@@ -1,6 +1,10 @@
 A small collaborative drawing app.
 Just experimenting.
 
+checkout with: 
+
+git clone git@github.com:pascalopitz/whiteboard.git --recursive
+
 Try is by going into the directory, and type:
 
 node app.js
