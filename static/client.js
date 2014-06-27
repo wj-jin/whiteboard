@@ -6,7 +6,7 @@
 			/Canvas.wipe\(\)/,
 			/Canvas.draw\(\d+,\d+\)/,
 			/Canvas.setPointer\(\d+,\d+\)/
-		];
+		];  //canvas events that are allowed
 
 		function execute(data) {
 			for(i in allowed) {
