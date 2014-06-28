@@ -32,7 +32,7 @@
 	    socket.on('connect', function() {
 			console.log('connect');
 			socket.send({server: 'Canvas.getCanvas()'});
-		});
+		}); 
 	
 	    socket.on('message', function(data) {
 			console.log('message:' + data);
@@ -53,9 +53,9 @@
 	var Canvas = new function() {
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
-		
+		// get canvas and ctx
 		ctx.fillStyle = "black";
-
+		
 		var x;
 		var y;
 		
