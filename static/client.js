@@ -12,7 +12,7 @@
 			for(i in allowed) {
 				var reg = allowed[i];
 				var matches = reg.exec(data);
-				
+				// apply reg on data
 				if(matches) {
 					eval(data);
 				}
@@ -20,8 +20,9 @@
 			
 		}
 		this.execute = execute;
+		//expose function execute to this
 	}
-	
+	// so object socket is a function
 	var Socket = new function() {
 	    var socket = new io.Socket(window.location.hostname, {
 			port: 9001,
